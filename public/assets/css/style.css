@@ -1,3 +1,10 @@
+
+/* START CSS FOR MAHER :  */
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap%27");
+.for-font{
+    font-family: 'Karla', sans-serif;
+    overflow-x: hidden;
+}
 .index-bg-image {
  background-image: url("/public/assets/SVG/bg.svg");
 }
@@ -53,16 +60,22 @@
 }
 .error-htwo{
     color: #1078AD;
-    font-size: 3.5vw !important;
+    font-size: 5.5vw !important;
 }
 .error-img{
-    width: 60vw !important ;
+    width: 40vw !important ;
 }
 .error-button{
-    background-color: #1078AD !important;
-    color: white;
+    background-color: #98d0ec !important;
+    color: #1078AD !important;
     width: 20vw;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
+}
+.error-button:hover{
+    background-color: #1078AD !important;
+    color: white !important;
+    width: 20vw;
+    font-size: 1.5vw;
 }
 .error-child-two>h3{
     color: #1078AD;
@@ -74,3 +87,16 @@ font-weight: bolder;
 .error-bolder{
     font-weight: bolder;
 }
+.result-carte{
+    background-color: #1078AD;
+}
+.result-hr {
+    color: white;
+    height: 1px;
+}
+.result-msg {
+    font-size: x-small;
+    font-weight: lighter;
+}
+/* END CSS FOR MAHER :  */
+
