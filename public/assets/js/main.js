@@ -182,56 +182,43 @@ const oui = document.querySelector("#oui");
 const non = document.querySelector("#non");
 const idk = document.querySelector('#idk')
 const prev_next = document.querySelector(".prev_next");
+
+previous.disabled = true;
+
 next.addEventListener('click', e => {
-    let obj = questions.filter(e => e.id == questionNumber.textContent);
-    let objs = questions.filter(e => e.id <= questionNumber.textContent);
-    if (questionNumber.textContent == 1) {
-        previous.disabled = true;
-    } else {
-        previous.disabled = false;
-    }
+    next.disabled = true;
     if (questionNumber.textContent == 1 && questions[questionNumber.textContent - 1].current_answers == "NON") questionNumber.textContent++;
-    if (questionNumber.textContent <= 23) {
+    if (questionNumber.textContent == 7 && questions[questionNumber.textContent - 1].current_answers == "NON") questionNumber.textContent++;
+
+    if (questionNumber.textContent <= 24) {
         questionNumber.textContent++;
     }
+    if (questionNumber.textContent > 0) {
+        previous.disabled = false;
+    } else {
+        previous.disabled = true;
+    }
+    if (questionNumber.textContent == 23) {
+        console.log(questions)
+    }
     if (questionNumber.textContent == 24) {
-        window.location.replace("./result.html");
+        window.location.replace('result.html')
     }
 
+
 })
-previous.addEventListener("click", e => {
-    if (questionNumber.textContent >= 1) {
+previous.addEventListener('click', e => {
+    if (questionNumber.textContent >= 0) {
         questionNumber.textContent--;
     }
+    if (questionNumber.textContent > 0) {
+        previous.disabled = false;
+    } else {
+        previous.disabled = true;
+    }
     next.disabled = false
+
 })
-prev_next.addEventListener("click", e => {
-
-    let obj = questions.filter(e => e.id == questionNumber.textContent);
-    if (obj[0].current_answers == '') {
-        next.disabled = true;
-    }
-    if (questions[questionNumber.textContent - 1].hasOwnProperty('dontknow')) {
-        idk.classList.remove('hide');
-    } else {
-        idk.classList.add('hide');
-
-    }
-    question.textContent = obj[0].question;
-    if (obj[0].possible_answers.length == 2) {
-        inputnbr.classList.add("hide");
-        submitnbr.classList.add("hide");
-        oui.classList.remove("hide");
-        non.classList.remove("hide");
-
-    } else {
-        inputnbr.classList.remove("hide");
-        submitnbr.classList.remove("hide");
-        oui.classList.add("hide");
-        non.classList.add("hide");
-    }
-})
-
 oui.addEventListener("click", e => {
     questions[questionNumber.textContent - 1].current_answers = "OUI";
     next.disabled = false;
@@ -246,6 +233,33 @@ idk.addEventListener("click", e => {
     questions[questionNumber.textContent - 1].current_answers = questions[questionNumber.textContent - 1].dontknow;
     next.disabled = false;
     console.log(questions[questionNumber.textContent - 1]);
+})
+prev_next.addEventListener('click', e => {
+    idk.classList.add('hide');
+    console.log("prev_next works");
+    question.textContent = questions[questionNumber.textContent - 1].question;
+    if (questions[questionNumber.textContent - 1].possible_answers.length == 2) {
+        inputnbr.classList.add('hide');
+        submitnbr.classList.add("hide");
+        oui.classList.remove('hide');
+        non.classList.remove('hide');
+    } else {
+        inputnbr.classList.remove('hide');
+        submitnbr.classList.remove("hide");
+        oui.classList.add('hide');
+        non.classList.add('hide');
+    }
+    if (questions[questionNumber.textContent - 1].hasOwnProperty('dontknow')) {
+        idk.classList.remove('hide')
+    }
+    if (questionNumber.textContent == 7) {
+        oui.innerHTML = 'MAL'
+        non.innerHTML = 'TRES MAL'
+    } else {
+        oui.innerHTML = 'OUI'
+        non.innerHTML = 'NON'
+    }
+
 })
 submitnbr.addEventListener('click', e => {
     switch (questionNumber.textContent) {
@@ -290,6 +304,4 @@ submitnbr.addEventListener('click', e => {
             }
             break;
     }
-
-
 })
