@@ -1,48 +1,57 @@
-
 /* START CSS FOR MAHER :  */
+
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap%27");
-.for-font{
+.for-font {
     font-family: 'Karla', sans-serif;
     overflow-x: hidden;
 }
+
 .index-bg-image {
- background-image: url("/public/assets/SVG/bg.svg");
+    background-image: url("/public/assets/SVG/bg.svg");
 }
+
 .index-logo {
     width: 90px;
 }
+
 .index-para {
     font-size: 10px;
 }
+
 .index-back {
     background-color: #F4CF1B;
 }
-.index-lien  {
+
+.index-lien {
     font-size: 13px;
 }
+
 .index-paragraphe {
     font-size: 24px;
     font-weight: 700;
-    
 }
+
 .index-hone {
     font-size: 26px;
     font-weight: 900;
     color: #1078AD;
 }
+
 .index-carte {
     color: #1078AD;
     font-size: 28px;
     font-weight: 700;
 }
+
 .index-pp {
     font-size: 16px;
     font-weight: 500;
 }
+
 .index-hone {
     color: #1078AD;
-    
 }
+
 .index-button {
     color: #1078AD !important;
     background-color: #aadef8 !important;
@@ -50,56 +59,76 @@
     font-weight: 700;
     border: 2px solid #1078AD !important;
 }
-.index-button:hover{
+
+.index-button:hover {
     color: white !important;
     background-color: #1078AD !important;
-    border:none !important;
+    border: none !important;
 }
-.child-one>.w-75{
+
+.child-one>.w-75 {
     width: 30vw !important;
 }
-.error-htwo{
+
+.error-htwo {
     color: #1078AD;
     font-size: 5.5vw !important;
 }
-.error-img{
-    width: 40vw !important ;
+
+.error-img {
+    width: 40vw !important;
 }
-.error-button{
+
+.error-button {
     background-color: #98d0ec !important;
     color: #1078AD !important;
     width: 20vw;
     font-size: 1.5vw;
 }
-.error-button:hover{
+
+.error-button:hover {
     background-color: #1078AD !important;
     color: white !important;
     width: 20vw;
     font-size: 1.5vw;
 }
-.error-child-two>h3{
+
+.error-child-two>h3 {
     color: #1078AD;
 }
-.error-num{
-color: green;
-font-weight: bolder;
-}
-.error-bolder{
+
+.error-num {
+    color: green;
     font-weight: bolder;
 }
-.result-carte{
+
+.error-bolder {
+    font-weight: bolder;
+}
+
+.result-carte {
     background-color: #1078AD;
 }
+
 .result-hr {
     color: white;
     height: 1px;
 }
+
 .result-msg {
     font-size: x-small;
     font-weight: lighter;
 }
+
+
 /* END CSS FOR MAHER :  */
 .information-div-paragraph{
     background-color: #96C5DC;
 }
 
+
+/* Ibrahim  */
+
+.hide {
+    display: none;
+}
